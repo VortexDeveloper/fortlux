@@ -1,0 +1,74 @@
+<!-- Menu do usuário -->
+<div class="header-area">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8">
+                <div class="user-menu">
+                    <ul>
+                        <li><a href="#"><i class="fa fa-user"></i> Minha conta</a></li>
+                        <li><a href="cart.html"><i class="fa fa-user"></i> Meu carrinho</a></li>
+                        <li><a href="checkout.html"><i class="fa fa-user"></i> Checkout</a></li>
+                        <li><a href="#"><i class="fa fa-user"></i> Login</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="header-right">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Header logo -->
+<div class="site-branding-area">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-6">
+                <div class="logo">
+                    <h1><a href="./"><figure id="logo" class="col-md-4 col-sm-3" data-hook>
+                      <%= image_tag('logo.png') %>
+                    </figure></a></h1>
+                </div>
+            </div>
+
+            <div class="col-sm-6">
+                <div class="shopping-item">
+                    <div class="" data-hook>
+                      <div id="link-to-cart" data-hook>
+                        <noscript>
+                          <i class="fa fa-shopping-cart"></i>
+                          <%= link_to Spree.t(:cart), '/cart' %>
+                        </noscript>
+                      </div>
+                      <script>Spree.fetch_cart()</script>
+                    </div>
+                    <!--<a href="cart.html">Cart - <span class="cart-amunt">$100</span> <i class="fa fa-shopping-cart"></i> <span class="product-count">5</span></a>-->
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- End site branding area -->
+
+<div class="mainmenu-area">
+    <div class="container">
+        <div class="row">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                  <li><%= link_to Spree.t(:home), spree.root_path %></li>
+                  <% @taxons.each do |taxon| %>
+                      <li><%= link_to taxon.name, seo_url(taxon) %></li>
+                  <% end %>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div> <!-- End mainmenu area -->
