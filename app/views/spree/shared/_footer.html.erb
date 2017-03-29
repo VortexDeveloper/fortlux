@@ -1,4 +1,81 @@
 <footer>
+    <div class="footer-top-area">
+        <div class="zigzag-bottom"></div>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-3 col-sm-6">
+                    <div class="footer-about-us">
+                        <%= image_tag('logo.png') %>
+                        <p>A Fortlux Comercial Elétrica e Hidráulicos Ltda, é uma empresa sólida, com mais de 10 anos no mercado, atuando no atacado e no varejo. Operamos em todo estado do Rio de Janeiro, e de maneira mais intensa na região dos lagos, onde fica localizada nossa matriz. Atualmente, além do mercado de instalações elétricas e hidráulicas, comercial, predial e industrial, nossa empresa tem atuado em áreas classificadas como: Automação Industrial, Naval, Civil, Petroquímica e Offshore.</p>
+                        <div class="footer-social">
+                            <a href="#" target="_blank"><i class="fa fa-facebook"></i></a>
+                            <a href="#" target="_blank"><i class="fa fa-twitter"></i></a>
+                            <a href="#" target="_blank"><i class="fa fa-youtube"></i></a>
+                            <a href="#" target="_blank"><i class="fa fa-linkedin"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-3 col-sm-6">
+                    <div class="footer-menu">
+                        <h2 class="footer-wid-title">Menu do Usuário </h2>
+                        <ul>
+                          <li><%= link_to Spree.t(:cart), '/cart' %></li>                        </li>
+                          <% if spree_current_user %>
+                            <li><%= link_to Spree.t(:my_account), spree.account_path %></li>
+                            <li><%= link_to Spree.t(:logout), spree.logout_path %></li>
+                          <% else %>
+                            <li><%= link_to Spree.t(:login), spree.login_path %></li>
+                          <% end %>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="col-md-3 col-sm-6">
+                    <div class="footer-menu">
+                        <h2 class="footer-wid-title">Categorias</h2>
+                        <ul>
+                          <li><%= link_to Spree.t(:home), spree.root_path %></li>
+                          <% @taxons.each do |taxon| %>
+                              <li><%= link_to taxon.name, seo_url(taxon) %></li>
+                          <% end %>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="col-md-3 col-sm-6">
+                    <div class="footer-newsletter">
+                        <h2 class="footer-wid-title">Encontre-nos</h2>
+                        <p>Rua José Paes de Abreu, 1236, Loja 06 – Jardim Flamboyant – Cabo Frio - RJ</p>
+                        <div class="newsletter-form">
+                            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3675.7451012533056!2d-42.03442384982314!3d-22.885872684948893!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x971b2e9708d059%3A0xc498233d5c21ce85!2sR.+Jos%C3%A9+Paes+de+Abreu%2C+1236+-+06+-+Jardim+Flamboyant%2C+Cabo+Frio+-+RJ!5e0!3m2!1spt-BR!2sbr!4v1478278049343" width="262" height="200" frameborder="0" style="border:0" allowfullscreen></iframe>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div> <!-- End footer top area -->
+
+    <div class="footer-bottom-area">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8">
+                    <div class="copyright">
+                        <p>COPYRIGHT © 2016 FORTLUX | MATERIAIS ELÉTRICOS E HIDRÁULICOS <a href="http://www.lojafortlux.com.br" target="_blank">lojafortlux.com.br</a></p>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="footer-card-icon">
+                        <i class="fa fa-cc-discover"></i>
+                        <i class="fa fa-cc-mastercard"></i>
+                        <i class="fa fa-cc-paypal"></i>
+                        <i class="fa fa-cc-visa"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div> <!-- End footer bottom area -->
    <script src="https://code.jquery.com/jquery.min.js"></script>
    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
    <%= javascript_include_tag "owl.carousel.min" %>

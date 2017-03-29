@@ -1,0 +1,70 @@
+.inner{
+  padding: 0 15px;
+}
+
+.left-side {
+    top: 55px;
+}
+
+.logo {
+    float: left;
+    font-size: 20px;
+    line-height: 50px;
+    text-align: center;
+    padding: 0 10px;
+    width: 220px;
+    font-family: 'Kaushan Script', cursive;
+    font-weight: 500;
+    height: 55px !important;
+    display: block;
+}
+
+
+.skin-blue .navbar {
+    background-color: #f4f4f4;
+    color: #535659;
+}
+
+.skin-blue .logo {
+    font-family: "PT Sans", Arial, serif !important;
+    font-size: 1.5em !important;
+    background-color: #f4f4f4;
+    color: #535659;
+}
+
+.skin-blue .logo span{
+    color: #ff3637;
+}
+
+.skin-blue .navbar .nav > li > a, .skin-blue .navbar .nav > li > a:active, .skin-blue .navbar .nav > li > a:focus, .skin-blue .navbar .nav .open > a, .skin-blue .navbar .nav .open > a, .skin-blue .navbar .nav .open > a:focus {
+    color: #535659 !important;
+}
+
+.skin-blue .navbar .sidebar-toggle .icon-bar {
+    background: #535659;
+}
+
+.orange{
+  background: #ff3637 !important;
+  color: #fff !important;
+}
+
+.grey{
+  background: #535659 !important;
+  color: #fff !important;
+}
+
+.box.box-primary {
+    border-top-color: #ff3637 !important;
+}
+
+.outer{
+  margin: 2.5px !important;
+}
+
+select {
+    background: #535659;
+    color: #fff !important;
+    border: none;
+    padding: 5px;
+}

@@ -1,0 +1,37 @@
+<div data-hook="homepage_products">
+  <% cache(cache_key_for_products) do %>
+    <div id="mainarea-home" class="maincontent-area">
+        <div class="zigzag-bottom"></div>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="latest-product">
+                        <h2 class="section-title">Novos</h2>
+                        <div class="product-carousel">
+                          <% if @products.any? %>
+                            <% @products.each do |product| %>
+                              <% url = spree.product_url(product, taxon_id: @taxon.try(:id)) %>
+                              <div class="single-product">
+                                  <div class="product-f-image">
+                                      <%= small_image(product, itemprop: "image") %><br/>
+                                      <div class="product-hover">
+                                          <%= link_to " Mais detalhes", url, class: 'fa fa-link view-details-link' %>
+                                      </div>
+                                  </div>
+                                  <%= link_to url, itemprop: "url" do %>
+                                    <h2><%= product.name %></h2>
+                                  <% end %>
+                                  <div class="product-carousel-price">
+                                      <%= display_price(product) %>
+                                  </div>
+                              </div>
+                            <% end %>
+                          <% end %>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div> <!-- End main content area -->
+    <% end %>
+  </div>

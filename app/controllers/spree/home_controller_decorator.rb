@@ -7,4 +7,10 @@ Spree::HomeController.class_eval do
     @taxonomies = Spree::Taxonomy.includes(root: :children)
   end
 
+  def load_taxons
+    @taxons = Spree::Taxon.all
+  end
+
+  before_action :load_taxons
+  
 end
